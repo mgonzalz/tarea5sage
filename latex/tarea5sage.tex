@@ -1,0 +1,178 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+
+\author{}
+\date{}
+
+\begin{document}
+
+\begin{verbatim}
+#Definir variables
+n = var('n')
+x = var('x')
+\end{verbatim}
+
+\begin{verbatim}
+#Ejercicio 1
+f(n)=(n^3 + 2*n -1)/(5*n^3 + n**2 -2*n +1)
+limit(f(n), n = infinity)
+\end{verbatim}
+
+\begin{verbatim}
+1/5
+\end{verbatim}
+
+\begin{verbatim}
+#Ejercicio 2
+reset("f")
+f(n)=(sqrt(n**2 - n)- sqrt(n**2 + 4*n))
+limit(f(n), n= infinity)
+\end{verbatim}
+
+\begin{verbatim}
+-5/2
+\end{verbatim}
+
+\begin{verbatim}
+#Ejercicio 3
+reset("f")
+f(n)=(ln(1+n+sqrt(n)) - ln(n))
+limit(f(n), n = oo)
+\end{verbatim}
+
+\begin{verbatim}
+0
+\end{verbatim}
+
+\begin{verbatim}
+#Ejercicio 4
+reset("f")
+f(n)=n**3
+sum(f(n), n, 0, 1000000)
+limit(f(n)/n**4, n = infinity)
+\end{verbatim}
+
+\begin{verbatim}
+0
+\end{verbatim}
+
+\begin{verbatim}
+#Ejercicio 5
+reset("f")
+f(n)=((n**3 - 2*n)/(n**3 + 3*n^2 - 2*n -1))**n
+limit(f(n), n = oo)
+\end{verbatim}
+
+\begin{verbatim}
+e^(-3)
+\end{verbatim}
+
+\begin{verbatim}
+#Ejercicio 6
+reset("f")
+f(n)= (n+2)/(n**3 - n)
+sum(f(n), n, 2, infinity)
+\end{verbatim}
+
+\begin{verbatim}
+5/4
+\end{verbatim}
+
+\begin{verbatim}
+#Ejercicio 7 
+reset("f")
+f(n)=1/(n**3 - n)
+sum(f(n),n, 2, infinity)
+\end{verbatim}
+
+\begin{verbatim}
+1/4
+\end{verbatim}
+
+\begin{verbatim}
+#Ejercicio 8
+reset("f")
+f(n)= (-1)**n * x^n
+sum(f(n), x, 0, oo)
+\end{verbatim}
+
+\begin{verbatim}
+(-1)^n*sum(x^n, x, 0, +Infinity)
+\end{verbatim}
+
+\begin{verbatim}
+#Ejercicio 9
+reset("f")
+f(n)= (-1)^n * 4^n * x^(2*n)
+sum(f(n), x, 0, infinity)
+\end{verbatim}
+
+\begin{verbatim}
+4^n*(-1)^n*sum(x^(2*n), x, 0, +Infinity)
+\end{verbatim}
+
+\begin{verbatim}
+#Ejercicio 10 (taylor(f(x), x, pt, orden max))
+reset("f")
+f(x)= 1/(1 + x*2)
+taylor(f(x), x, 0, 3)
+\end{verbatim}
+
+\begin{verbatim}
+-8*x^3 + 4*x^2 - 2*x + 1
+\end{verbatim}
+
+\begin{verbatim}
+#Ejercicio 11
+g(x)= x*cos(x)
+taylor(g(x), x, 0, 3)
+\end{verbatim}
+
+\begin{verbatim}
+-1/2*x^3 + x
+\end{verbatim}
+
+\end{document}
